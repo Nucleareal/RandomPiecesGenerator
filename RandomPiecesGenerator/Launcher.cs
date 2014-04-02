@@ -91,7 +91,6 @@ namespace RandomPiecesGenerator
                     if (sps.Length < 7)
                     {
                         Cns.Warning("FileName not Contains Params (You'll read Readme.txt), Use Default Params");
-                        continue;
                     }
                     else
                     {
@@ -138,8 +137,13 @@ namespace RandomPiecesGenerator
                         sf.Shuffle();
                     }
 
+                    //w = 1024
+                    //h =  512
+
                     int dix = w / dvx;
                     int diy = h / dvy;
+
+                    //dix = 1024 / 16 = 64
 
                     using (FileStream fs = new FileStream(fname, FileMode.Append, FileAccess.Write))
                     {
@@ -147,8 +151,8 @@ namespace RandomPiecesGenerator
                         {
                             for (int i = 0; i < w; i++)
                             {
-                                int inX = j / dix;
-                                int inY = i / diy;
+                                int inX = i / dix;
+                                int inY = j / diy;
 
                                 int lvX = sf[inX, inY].FromX;
                                 int lvY = sf[inX, inY].FromY;

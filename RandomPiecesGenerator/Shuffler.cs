@@ -43,10 +43,10 @@ namespace RandomPiecesGenerator
                 for (int j = 0; j < XCount; j++)
                 {
                     this[j, i] = new Chunk();
-                    this[j, i].ToX = i;
-                    this[j, i].ToY = j;
-                    this[j, i].FromX = i;
-                    this[j, i].FromY = j;
+                    this[j, i].ToX = j;
+                    this[j, i].ToY = i;
+                    this[j, i].FromX = j;
+                    this[j, i].FromY = i;
                 }
             }
         }
