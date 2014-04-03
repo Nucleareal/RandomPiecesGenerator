@@ -6,4 +6,4 @@
 
 [Windows用のバイナリ](https://dl.dropboxusercontent.com/u/39953759/RPicGen.zip "Windows用のバイナリ")
 
-高速化はまた今度します
+分割数とか選択可能回数とか指定できますので問題制作のお供にどうぞ。
