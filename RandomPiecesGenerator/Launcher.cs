@@ -71,6 +71,8 @@ namespace RandomPiecesGenerator
                 }
             }
 
+            string supportFormat = "(png|gif|jpg|tiff|bmp|ico)";
+
             foreach(var v in names)
             {
                 if (!File.Exists(v))
@@ -79,7 +81,12 @@ namespace RandomPiecesGenerator
                     continue;
                 }
 
-                using (Bitmap img = new Bitmap(v))
+                if (!Regex.IsMatch(v.ToLower(), supportFormat))
+                {
+                    Cns.Error("ImageFile {0} Is Not Support Format");
+                }
+
+                using (BitmapFast img = new BitmapFast(new Bitmap(v)))
                 {
                     var dvx = 16;
                     var dvy = 16;
@@ -108,7 +115,7 @@ namespace RandomPiecesGenerator
 
                     // Filename _ DVX _ DVY _ SetectableCount _ CostRateX _ CostRateY . 拡張子
 
-                    string fname = Regex.Replace(v, @"(png|gif)", "ppm");
+                    string fname = Regex.Replace(v.ToLower(), supportFormat, "ppm");
                     int w = img.Width;
                     int h = img.Height;
 
