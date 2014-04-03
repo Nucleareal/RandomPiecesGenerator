@@ -83,7 +83,7 @@ namespace RandomPiecesGenerator
 
                 if (!Regex.IsMatch(v.ToLower(), supportFormat))
                 {
-                    Cns.Error("ImageFile {0} Is Not Support Format");
+                    Cns.Error("ImageFile {0} Is Not Support Format", v);
                     continue;
                 }
 
