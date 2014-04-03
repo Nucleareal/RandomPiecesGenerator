@@ -84,6 +84,7 @@ namespace RandomPiecesGenerator
                 if (!Regex.IsMatch(v.ToLower(), supportFormat))
                 {
                     Cns.Error("ImageFile {0} Is Not Support Format");
+                    continue;
                 }
 
                 using (BitmapFast img = new BitmapFast(new Bitmap(v)))
